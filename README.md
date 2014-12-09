@@ -1,0 +1,4 @@
+genpm
+=====
+
+generate "npm" meanings
