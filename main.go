@@ -47,7 +47,7 @@ func npms(in <-chan string) <-chan string {
 	go func() {
 		defer close(out)
 		for word := range in {
-			history = append(history, word)
+			history = append(history, strings.ToLower(word))
 			if len(history) > 3 {
 				history = history[1:]
 			}
@@ -63,4 +63,5 @@ func main() {
 	for npms := range npms(words(os.Stdin)) {
 		fmt.Println(npms)
 	}
+	// Node package Modules
 }
